@@ -8,7 +8,7 @@ const { queryVector } = require('./../lib/upstash');
 // Route
 const assistantRoute = express.Router()
 
-assistantRoute.post('/search', async (req, res) => {
+assistantRoute.get('/search', async (req, res) => {
 
   // Headers
   const apiKey = req.headers['x-api-key'];
