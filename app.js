@@ -4,6 +4,10 @@ const express = require("express");
 // ENV
 require("dotenv").config();
 
+// Initialise
+const { initialize } = require("./lib/utils");
+initialize();
+
 // App
 const app = express();
 
