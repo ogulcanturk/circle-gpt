@@ -10,6 +10,10 @@ const assistantRoute = express.Router()
 
 assistantRoute.post('/search', async (req, res) => {
 
+  // Headers
+  const apiKey = req.headers['x-api-key'];
+  if (apiKey !== process.env.API_KEY) return res.status(403).json({ message: 'API key incorrect.' });
+
   // Params
   const { text } = req.query;
   if (!text) return res.status(400).json({ message: "Text not found." });
