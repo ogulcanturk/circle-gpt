@@ -1,0 +1,14 @@
+{
+  "name": "circle-gpt",
+  "version": "0.0.1",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "repository": "https://github.com/ogulcanturk/circle-gpt.git",
+  "author": "Ogulcan <account.work@ogulcan.dev>",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.3"
+  }
+}
