@@ -1,12 +1,12 @@
 {
-  "name": "circle-gpt",
-  "version": "0.0.1",
+  "name": "nomadai",
+  "version": "0.0.2",
   "main": "app.js",
   "scripts": {
     "start": "node app.js",
     "dev": "nodemon app.js"
   },
-  "repository": "https://github.com/ogulcanturk/circle-gpt.git",
+  "repository": "https://github.com/ogulcanturk/nomadai.git",
   "author": "Ogulcan <account.work@ogulcan.dev>",
   "license": "MIT",
   "dependencies": {
