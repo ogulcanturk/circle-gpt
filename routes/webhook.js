@@ -5,7 +5,24 @@ const express = require('express');
 const webhookRoute = express.Router()
 
 webhookRoute.post('/post', (req, res) => {
-  return res.status(200).json({ message: 'ok' });
+
+  // Body
+  const body = req.body;
+
+  try {
+
+    // Find Post
+    // Get Post Details
+    // Create Summary
+    // Create Embedding
+    // Upsert Vector
+    // Return
+
+  } catch(error) {
+    // Error
+    console.log(error);
+    return res.status(500).json({ message: 'Server err.' });
+  }
 });
 
 module.exports = webhookRoute;
