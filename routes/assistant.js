@@ -3,7 +3,7 @@ const express = require('express');
 
 // Lib
 const { createEmbedding } = require('./../lib/openai');
-const { queryVector } = require('./../lib/upstash');
+const { queryVector, ratelimit } = require('./../lib/upstash');
 
 // Route
 const assistantRoute = express.Router()
@@ -13,6 +13,11 @@ assistantRoute.get('/search', async (req, res) => {
   // Headers
   const apiKey = req.headers['x-api-key'];
   if (apiKey !== process.env.API_KEY) return res.status(403).json({ message: 'API key incorrect.' });
+
+  // RateLimit
+  const ipAddress = (req.headers['x-forwarded-for'] || '').split(',')[0];
+  const success = await ratelimit.limit(ipAddress);
+  if (!success) return res.status(403).json({ message: 'Calm down.' });
 
   // Params
   const { text } = req.query;
