@@ -1,0 +1,16 @@
+app = ""
+
+[build]
+
+[http_service]
+  internal_port =
+  force_https =
+  auto_stop_machines =
+  auto_start_machines =
+  min_machines_running =
+  processes = ['app']
+
+[[vm]]
+  memory = ""
+  cpu_kind = ""
+  cpus =
