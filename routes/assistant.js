@@ -29,7 +29,7 @@ assistantRoute.get('/search', async (req, res) => {
     if (!vector) return res.status(400).json({ message: "Vector not found." });
 
     // Return
-    return res.status(200).json(vector);
+    return res.status(200).json({ message: "Query success.", data: vector });
 
   } catch(error) {
     // Error
