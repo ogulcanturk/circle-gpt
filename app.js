@@ -5,6 +5,7 @@ const express = require("express");
 require("dotenv").config();
 
 // Initialise
+// I need a better idea.
 const { initialize } = require("./lib/utils");
 initialize();
 
