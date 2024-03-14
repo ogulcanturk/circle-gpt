@@ -1,9 +1,4 @@
-# fly.toml app configuration file generated for nomadai on 2024-03-12T21:48:42+03:00
-#
-# See https://fly.io/docs/reference/configuration/ for information about how to use this file.
-#
-
-app = 'nomadai'
+app = 'gpt-for-communities'
 primary_region = 'ams'
 
 [build]
