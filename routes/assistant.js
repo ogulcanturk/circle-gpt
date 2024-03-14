@@ -11,16 +11,18 @@ const assistantRoute = express.Router()
 assistantRoute.get('/search', async (req, res) => {
 
   // Headers
-  const apiKey = req.headers['x-api-key'];
+  const { text } = req.query;
+  const apiKey = req.headers['x-api-key'] || '';
+  const ipAddress = (req.headers['x-forwarded-for'] || '').split(',')[0] || '';
+
+  // API Key Checks
   if (apiKey !== process.env.API_KEY) return res.status(403).json({ message: 'API key incorrect.' });
 
   // RateLimit
-  const ipAddress = (req.headers['x-forwarded-for'] || '').split(',')[0];
   const success = await ratelimit.limit(ipAddress);
   if (!success) return res.status(403).json({ message: 'Calm down.' });
 
   // Params
-  const { text } = req.query;
   if (!text) return res.status(400).json({ message: "Text not found." });
 
   try {
