@@ -12,6 +12,10 @@ initialize();
 // App
 const app = express();
 
+// Bodyparser
+app.use(express.json());
+app.use(express.urlencoded({ extended: true}));
+
 // Routes
 const webhookRoute = require("./routes/webhook");
 const assistantRoute = require("./routes/assistant");
