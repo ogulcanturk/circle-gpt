@@ -13,6 +13,7 @@ webhookRoute.post('/post', async (req, res) => {
 
   // Body
   const { data: { post_id } } = req.body;
+  if (post_id === 1) return res.status(200).json({ message: 'ok.' });
 
   try {
 
